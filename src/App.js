@@ -1,25 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import Card from './Card/Card.jsx'
+import Food from './CounterApp.jsx'
+import News from './News.jsx' 
+import Button from './Button.jsx'
+import Color from './ColorPicker.jsx'
+
 
 function App() {
+  const fruits =[
+    {id : 1,name:"apple", calories: 122}, 
+    { id : 2,name: "pawpaw", calories: 123}, 
+      {id : 3,name: "cocounut", calories: 233}, 
+    {id : 4,name: "mango", calories: 133}
+  ];
+    const foods =[
+      {id : 1,name:"garri", calories: 122}, 
+      { id : 2,name: "beans", calories: 123}, 
+      {id : 3,name: "ewa", calories: 233}, 
+      {id : 4,name: "agbado", calories: 133} ];
+    
+    
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <>
+<News/>
+<Color></Color>
+   </>
+
+  )
 }
 
 export default App;
