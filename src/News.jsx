@@ -6,29 +6,36 @@ const News = ()=>{
 
     const [car, upCar] = useState([]);
     const [year, upYear] = useState(new Date().getFullYear());
-    const [make, upMake] = useState([]);
-    const [model, upModel] = useState([]);
+    const [make, upMake] = useState("");
+    const [model, upModel] = useState("");
     
     function addCar(){
        const arrCar = {
-        make : make,
         year : year,
-         model : model
+         model : model,
+         make : make,
+        }
+       upCar((c)=> [...c, arrCar]);
+       upYear("");
+       upMake("");
+       upModel("");
 
-       }
-       upCar((c)=> [...c, arrCar])
     }
-    function removeCar(){
+    function removeCar(index){
+      upCar(c => c.filter((Element, i)=> i !== index ))
     
     }
     function setYear(event){
         upYear(event.target.value)
+        
     }
     function setMake(event){
-        upMake(event.target.value)
+        upMake(event.target.value);
+        
     }
     function setModel(event){
-        upModel(event.target.value)
+        upModel(event.target.value);
+       
     }
 
 
@@ -49,11 +56,15 @@ const removeFood = (index)=>{
         <>
         <div>
         <h2>list of cars🚛🚒🚓</h2>
-        <ul>{car.map((car, index)=> <li key={index}>{car.year} {car.make} {car.model}</li>)}</ul>
-        <input type="number" value={year} onChange={setYear}></input><br></br>
-        <input type="text" value ={make} onchange={setMake} placeholder='set make'></input><br></br>
-        <input type="text"value ={make}  onchange={setModel} placeholder='set model'></input><br></br>
+        <ul>{car.map((car, index)=> <li onClick={()=>removeCar(index)} key={index}>
+         {car.year} {car.make }  {car.model}
+         </li>)}</ul>
+        <input type="number" value={year} onChange={setYear}/><br/>
+        <input type="text" value = {make}  onChange={setMake} placeholder='set make'></input><br/>
+        <input type="text"  value= {model} onChange={setModel} placeholder='set model'></input><br/>
+        
         <button onClick={addCar}>add car</button>
+
         </div>
 
 

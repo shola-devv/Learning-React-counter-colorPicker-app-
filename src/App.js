@@ -2,6 +2,8 @@ import Card from './Card/Card.jsx'
 import Food from './CounterApp.jsx'
 import News from './News.jsx' 
 import Button from './Button.jsx'
+import Todolist from './Todolist'
+import Reacthooks from './Reacthooks.jsx'
 import Color from './ColorPicker.jsx'
 
 
@@ -22,8 +24,7 @@ function App() {
 
   return (
     <>
-<News/>
-<Color></Color>
+    <Todolist/>
    </>
 
   )
