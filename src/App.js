@@ -5,7 +5,9 @@ import Button from './Button.jsx'
 import Todolist from './Todolist'
 import Reacthooks from './Reacthooks.jsx'
 import Color from './ColorPicker.jsx'
-
+import StopWatch from './StopWatch.jsx'
+import RandomJoke from './RandomJoke.jsx'
+import ReduxT from './ReduxT.jsx'
 
 function App() {
   const fruits =[
@@ -24,7 +26,10 @@ function App() {
 
   return (
     <>
-    <Todolist/>
+  
+  
+   < Color/>
+   < Food/>
    </>
 
   )
